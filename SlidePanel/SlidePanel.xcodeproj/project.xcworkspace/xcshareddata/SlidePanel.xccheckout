@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BC36D206-5834-44D2-B56B-AE0B29F3F27F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SlidePanel</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BDC78134-E273-40C1-B332-E90C6B2A03B1</key>
+		<string>https://github.com/TinyXu/SlidePanel.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SlidePanel/SlidePanel.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BDC78134-E273-40C1-B332-E90C6B2A03B1</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TinyXu/SlidePanel.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BDC78134-E273-40C1-B332-E90C6B2A03B1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BDC78134-E273-40C1-B332-E90C6B2A03B1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SlidePanel</string>
+		</dict>
+	</array>
+</dict>
+</plist>
