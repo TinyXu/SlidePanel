@@ -19,6 +19,7 @@
 		957DFD4018C0B7A8009AD344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957DFD2818C0B7A8009AD344 /* UIKit.framework */; };
 		957DFD4818C0B7A8009AD344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957DFD4618C0B7A8009AD344 /* InfoPlist.strings */; };
 		957DFD4A18C0B7A8009AD344 /* SlidePanelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 957DFD4918C0B7A8009AD344 /* SlidePanelTests.m */; };
+		959F6A1418C393A4002CECA9 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A1318C393A4002CECA9 /* CommonFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		957DFD4518C0B7A8009AD344 /* SlidePanelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlidePanelTests-Info.plist"; sourceTree = "<group>"; };
 		957DFD4718C0B7A8009AD344 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		957DFD4918C0B7A8009AD344 /* SlidePanelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlidePanelTests.m; sourceTree = "<group>"; };
+		959F6A1218C393A4002CECA9 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
+		959F6A1318C393A4002CECA9 /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				957DFD3418C0B7A8009AD344 /* AppDelegate.m */,
 				957DFD3618C0B7A8009AD344 /* Images.xcassets */,
 				957DFD2B18C0B7A8009AD344 /* Supporting Files */,
+				959F6A1218C393A4002CECA9 /* CommonFunctions.h */,
+				959F6A1318C393A4002CECA9 /* CommonFunctions.m */,
 			);
 			path = SlidePanel;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			files = (
 				957DFD3518C0B7A8009AD344 /* AppDelegate.m in Sources */,
 				957DFD3118C0B7A8009AD344 /* main.m in Sources */,
+				959F6A1418C393A4002CECA9 /* CommonFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +447,7 @@
 				957DFD4F18C0B7A8009AD344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		957DFD5018C0B7A8009AD344 /* Build configuration list for PBXNativeTarget "SlidePanelTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +456,7 @@
 				957DFD5218C0B7A8009AD344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,3 @@
 
 #import "CommonFunctions.h"
 
-@implementation CommonFunctions
-
-@end
