@@ -20,6 +20,7 @@
 		957DFD4818C0B7A8009AD344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957DFD4618C0B7A8009AD344 /* InfoPlist.strings */; };
 		957DFD4A18C0B7A8009AD344 /* SlidePanelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 957DFD4918C0B7A8009AD344 /* SlidePanelTests.m */; };
 		959F6A1418C393A4002CECA9 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A1318C393A4002CECA9 /* CommonFunctions.m */; };
+		95A990DA18C8A19700B38BEB /* SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A990D918C8A19700B38BEB /* SlideMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		957DFD4918C0B7A8009AD344 /* SlidePanelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlidePanelTests.m; sourceTree = "<group>"; };
 		959F6A1218C393A4002CECA9 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
 		959F6A1318C393A4002CECA9 /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
+		95A990D818C8A19700B38BEB /* SlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenu.h; sourceTree = "<group>"; };
+		95A990D918C8A19700B38BEB /* SlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 			children = (
 				957DFD3318C0B7A8009AD344 /* AppDelegate.h */,
 				957DFD3418C0B7A8009AD344 /* AppDelegate.m */,
+				95A990D818C8A19700B38BEB /* SlideMenu.h */,
+				95A990D918C8A19700B38BEB /* SlideMenu.m */,
 				957DFD3618C0B7A8009AD344 /* Images.xcassets */,
 				957DFD2B18C0B7A8009AD344 /* Supporting Files */,
 				959F6A1218C393A4002CECA9 /* CommonFunctions.h */,
@@ -244,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A990DA18C8A19700B38BEB /* SlideMenu.m in Sources */,
 				957DFD3518C0B7A8009AD344 /* AppDelegate.m in Sources */,
 				957DFD3118C0B7A8009AD344 /* main.m in Sources */,
 				959F6A1418C393A4002CECA9 /* CommonFunctions.m in Sources */,
