@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "SlideMenu.h"
+#import "MenuViewController.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
@@ -15,7 +17,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-        
+    MainViewController *main = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
+    MenuViewController *menu = [[MenuViewController alloc]initWithNibName:@"MenuViewController" bundle:nil];
+//    SlideMenu *rootMenu = [[SlideMenu alloc]init];
+    SlideMenu *rootMenu = [[SlideMenu alloc]initWithCurrentViewController:main menu:menu];
+    [self.window setRootViewController:rootMenu];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

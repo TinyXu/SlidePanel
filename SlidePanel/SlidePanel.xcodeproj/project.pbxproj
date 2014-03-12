@@ -20,6 +20,11 @@
 		957DFD4818C0B7A8009AD344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957DFD4618C0B7A8009AD344 /* InfoPlist.strings */; };
 		957DFD4A18C0B7A8009AD344 /* SlidePanelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 957DFD4918C0B7A8009AD344 /* SlidePanelTests.m */; };
 		959F6A1418C393A4002CECA9 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A1318C393A4002CECA9 /* CommonFunctions.m */; };
+		95A87DCC18D0841100DBA559 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A87DCA18D0841100DBA559 /* MenuViewController.m */; };
+		95A87DCD18D0841100DBA559 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A87DCB18D0841100DBA559 /* MenuViewController.xib */; };
+		95A87DD118D0849900DBA559 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A87DCF18D0849900DBA559 /* MainViewController.m */; };
+		95A87DD218D0849900DBA559 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A87DD018D0849900DBA559 /* MainViewController.xib */; };
+		95A87DD518D0855600DBA559 /* UIViewController+SlidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A87DD418D0855600DBA559 /* UIViewController+SlidePanel.m */; };
 		95A990DA18C8A19700B38BEB /* SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A990D918C8A19700B38BEB /* SlideMenu.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,14 @@
 		957DFD4918C0B7A8009AD344 /* SlidePanelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlidePanelTests.m; sourceTree = "<group>"; };
 		959F6A1218C393A4002CECA9 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
 		959F6A1318C393A4002CECA9 /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
+		95A87DC918D0841100DBA559 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		95A87DCA18D0841100DBA559 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		95A87DCB18D0841100DBA559 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		95A87DCE18D0849900DBA559 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		95A87DCF18D0849900DBA559 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		95A87DD018D0849900DBA559 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		95A87DD318D0855600DBA559 /* UIViewController+SlidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SlidePanel.h"; sourceTree = "<group>"; };
+		95A87DD418D0855600DBA559 /* UIViewController+SlidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SlidePanel.m"; sourceTree = "<group>"; };
 		95A990D818C8A19700B38BEB /* SlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenu.h; sourceTree = "<group>"; };
 		95A990D918C8A19700B38BEB /* SlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +128,14 @@
 			children = (
 				957DFD3318C0B7A8009AD344 /* AppDelegate.h */,
 				957DFD3418C0B7A8009AD344 /* AppDelegate.m */,
+				95A87DCE18D0849900DBA559 /* MainViewController.h */,
+				95A87DCF18D0849900DBA559 /* MainViewController.m */,
+				95A87DD318D0855600DBA559 /* UIViewController+SlidePanel.h */,
+				95A87DD418D0855600DBA559 /* UIViewController+SlidePanel.m */,
+				95A87DD018D0849900DBA559 /* MainViewController.xib */,
+				95A87DC918D0841100DBA559 /* MenuViewController.h */,
+				95A87DCA18D0841100DBA559 /* MenuViewController.m */,
+				95A87DCB18D0841100DBA559 /* MenuViewController.xib */,
 				95A990D818C8A19700B38BEB /* SlideMenu.h */,
 				95A990D918C8A19700B38BEB /* SlideMenu.m */,
 				957DFD3618C0B7A8009AD344 /* Images.xcassets */,
@@ -230,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				957DFD2F18C0B7A8009AD344 /* InfoPlist.strings in Resources */,
+				95A87DCD18D0841100DBA559 /* MenuViewController.xib in Resources */,
 				957DFD3718C0B7A8009AD344 /* Images.xcassets in Resources */,
+				95A87DD218D0849900DBA559 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A990DA18C8A19700B38BEB /* SlideMenu.m in Sources */,
+				95A87DD118D0849900DBA559 /* MainViewController.m in Sources */,
 				957DFD3518C0B7A8009AD344 /* AppDelegate.m in Sources */,
 				957DFD3118C0B7A8009AD344 /* main.m in Sources */,
 				959F6A1418C393A4002CECA9 /* CommonFunctions.m in Sources */,
+				95A87DD518D0855600DBA559 /* UIViewController+SlidePanel.m in Sources */,
+				95A87DCC18D0841100DBA559 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
