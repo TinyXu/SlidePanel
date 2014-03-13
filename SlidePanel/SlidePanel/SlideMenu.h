@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlideMenu : UIViewController
+@interface SlideMenu : UIViewController <UIGestureRecognizerDelegate>
 {
     UIImageView *_backgroundImageView;
 }
@@ -18,12 +18,17 @@
 @property(nonatomic,assign,readwrite) CGFloat currentScaleValue;
 //当前视图覆盖按钮
 @property(nonatomic,strong) UIButton *currentTopButton;
-
+//滑动时背影图片缩放开关
+@property(nonatomic,assign,readwrite) BOOL backgroundImageScaleisOn;
 @property(nonatomic,strong,readwrite) UIViewController *currentViewController;
 @property(nonatomic,strong,readwrite) UIViewController *menuViewController;
 @property(nonatomic,strong,readwrite) UIImage *backgroundImage;
+//动画时间
+@property(nonatomic,assign,readwrite) float animateDuration;
 
-
--(id)initWithCurrentViewController:(UIViewController *)currentViewController menu:(UIViewController *)menuViewController;
+//手势开关
+@property(nonatomic,assign,readwrite) BOOL panEnabled;
+- (id)initWithCurrentViewController:(UIViewController *)currentViewController menu:(UIViewController *)menuViewController;
 - (void)showMenu;
+- (void)hideMenu;
 @end

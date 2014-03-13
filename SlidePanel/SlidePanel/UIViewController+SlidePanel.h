@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SlideMenu.h"
 @interface UIViewController (SlidePanel)
-@property(nonatomic,strong,getter = slideMenu) SlideMenu *slideMenu;
+@property(nonatomic,strong,getter = slideMenu,readonly) SlideMenu *slideMenu;
 
 @end

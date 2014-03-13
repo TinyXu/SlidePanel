@@ -24,14 +24,6 @@
                         <action selector="test:" destination="-1" eventType="touchUpInside" id="6Xj-5t-g3p"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OLo-We-GOA">
-                    <rect key="frame" x="80" y="150" width="123" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                </segmentedControl>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
