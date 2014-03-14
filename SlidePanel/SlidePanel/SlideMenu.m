@@ -11,6 +11,8 @@
 @interface SlideMenu ()
 
 @property(nonatomic,assign)BOOL menuVisible;
+@property(nonatomic,assign)CGPoint startPoint;
+
 @end
 
 @implementation SlideMenu
@@ -82,7 +84,8 @@
     _menuViewController.view.transform = CGAffineTransformMakeScale(1.5, 1.5);
     [self displayController:_currentViewController frame:self.view.bounds];
     if (_panEnabled) {
-        UIGestureRecognizer *pan = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(receiveGestureRecognized:)];
+        //UIGestureRecognizer *pan = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(receiveGestureRecognized:)];
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(receiveGestureRecognized:)];
         pan.delegate = self;
         [self.view addGestureRecognizer:pan];
     }
@@ -108,6 +111,7 @@
         
     } completion:^(BOOL finished) {
         _menuVisible = YES;
+       
     }];
     
 }
@@ -195,7 +199,7 @@
         
     }
     
-    return NO;
+    return YES;
 }
 
 - (void)receiveGestureRecognized:(UIPanGestureRecognizer *)recognizer
@@ -207,6 +211,61 @@
     
     CGPoint point = [recognizer translationInView:self.view];
     
+    if (!_menuVisible) {
+        if (point.x < 0) {
+            return;
+        }
+    } else {
+        if (point.x > 0) {
+            return;
+        }
+    }
+    
+    //
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        /*menu will show delegate waiting... */
+     
+        float start_X = _currentViewController.view.center.x - _currentViewController.view.frame.size.width/2;
+        float start_Y = _currentViewController.view.center.y - _currentViewController.view.frame.size.height/2;
+        _startPoint = CGPointMake(start_X, start_Y);
+        [self addButtonOnCurrentTop];
+        [self.view.window endEditing:YES];
+    }
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateChanged) {
+        //移动计算偏移度,左->右 0->1  右到左 1->0
+        CGFloat delta = _menuVisible ? ((_startPoint.x + point.x)/_startPoint.x):(point.x/self.view.frame.size.width);
+        //内容视图scale数值
+        CGFloat currentViewScaleValue = 1 - ((1-_currentScaleValue) * delta);
+        //menu视图scale数值
+        CGFloat menuViewScaleValue = 1.5 - (0.5 * delta);
+        //背景scale数值
+        CGFloat backViewScaleValue = 1.6 - (0.6 * delta);
+        
+        _menuViewController.view.alpha = delta;
+        _menuViewController.view.transform = CGAffineTransformMakeScale(menuViewScaleValue, menuViewScaleValue);
+        
+        
+        if (_currentScaleisOn) {
+            _currentViewController.view.transform = CGAffineTransformMakeScale(currentViewScaleValue, currentViewScaleValue);
+            _currentViewController.view.transform = CGAffineTransformTranslate(_currentViewController.view.transform, point.x, 0);
+        }
+        if (_backgroundImageScaleisOn) {
+            _backgroundImageView.transform = CGAffineTransformMakeScale(backViewScaleValue, backViewScaleValue);
+        }
+      
+        
+    }
+    
+    
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        //NSLog(@"%f",[recognizer velocityInView:self.view].x);
+        if ([recognizer velocityInView:self.view].x > 0) {
+            [self showMenu];
+        } else {
+            [self hideMenu];
+        }
+    }
 }
 
 @end

@@ -20,6 +20,7 @@
     MainViewController *main = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
     MenuViewController *menu = [[MenuViewController alloc]initWithNibName:@"MenuViewController" bundle:nil];
     SlideMenu *rootMenu = [[SlideMenu alloc]initWithCurrentViewController:main menu:menu];
+    rootMenu.panEnabled = YES;
     [self.window setRootViewController:rootMenu];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
