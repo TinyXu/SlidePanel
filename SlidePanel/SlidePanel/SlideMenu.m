@@ -303,9 +303,6 @@
     [slideButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *menuIcon = [[UIBarButtonItem alloc]initWithCustomView:slideButton];
     
-    //_currentViewController.navigationItem.leftBarButtonItem = menuIcon;
-    //NSLog(@"%@",_currentViewController);
-    //[_currentViewController.navigationController.navigationItem setLeftBarButtonItem:menuIcon];
     UIViewController *rootViewController = [[nav viewControllers] objectAtIndex:0];
     rootViewController.navigationItem.leftBarButtonItem = menuIcon;
     
