@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
-- (IBAction)test:(id)sender;
+
 
 @end

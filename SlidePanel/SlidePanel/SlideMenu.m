@@ -165,7 +165,7 @@
     CGAffineTransform transform = _currentViewController.view.transform;
     [self hideController:_currentViewController];
     [_currentViewController release];
-    _currentViewController = currentViewController;
+    _currentViewController = [currentViewController retain];
     [self displayController:currentViewController frame:self.view.bounds];
     _currentViewController.view.transform = transform;
     _currentViewController.view.frame = frame;
@@ -303,9 +303,6 @@
     [slideButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *menuIcon = [[UIBarButtonItem alloc]initWithCustomView:slideButton];
     
-    //_currentViewController.navigationItem.leftBarButtonItem = menuIcon;
-    //NSLog(@"%@",_currentViewController);
-    //[_currentViewController.navigationController.navigationItem setLeftBarButtonItem:menuIcon];
     UIViewController *rootViewController = [[nav viewControllers] objectAtIndex:0];
     rootViewController.navigationItem.leftBarButtonItem = menuIcon;
     
@@ -322,6 +319,7 @@
 {
     [super dealloc];
     [_currentViewController release];
+    [_currentTopButton release];
 }
 
 @end

@@ -37,7 +37,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)test:(id)sender {
-    [self.slideMenu showMenu];
-}
 @end
