@@ -40,6 +40,7 @@
     _menuVisible = NO;
     
     _panEnabled = NO;
+    _slideIconEnabled = YES;
     
 }
 
@@ -47,8 +48,10 @@
 {
     self = [self init];
     if (self) {
-        _currentViewController = currentViewController;
+        _currentViewController = [currentViewController retain];
+        //[self setCurrentViewController:currentViewController];
         _menuViewController = menuViewController;
+        [self addNavSlideIcon];
               
     }
     return self;
@@ -62,7 +65,7 @@
     
     _backgroundImageView = ({
         UIImageView *imageview = [[UIImageView alloc]initWithFrame:self.view.bounds];
-        imageview.image = [UIImage imageNamed:@"background"];
+        imageview.image = [UIImage imageNamed:@"MenuBackground"];
         imageview.contentMode = UIViewContentModeScaleAspectFill;
         imageview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         imageview;
@@ -87,7 +90,9 @@
         //UIGestureRecognizer *pan = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(receiveGestureRecognized:)];
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(receiveGestureRecognized:)];
         pan.delegate = self;
+        
         [self.view addGestureRecognizer:pan];
+        [pan release];
     }
 }
 
@@ -153,16 +158,18 @@
 - (void)setCurrentViewController:(UIViewController *)currentViewController
 {
     if(!_currentViewController){
-        _currentViewController = currentViewController;
+        _currentViewController = [currentViewController retain];
         return;
     }
     CGRect frame = _currentViewController.view.frame;
     CGAffineTransform transform = _currentViewController.view.transform;
     [self hideController:_currentViewController];
+    [_currentViewController release];
     _currentViewController = currentViewController;
     [self displayController:currentViewController frame:self.view.bounds];
     _currentViewController.view.transform = transform;
     _currentViewController.view.frame = frame;
+    [self addNavSlideIcon];
 }
 
 - (void)didReceiveMemoryWarning
@@ -194,6 +201,10 @@
     /*
        iOS7下 nav后退手势；
      */
+    if (!_panEnabled) {
+        return NO;
+    }
+    
     
     if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && !_menuVisible) {
         
@@ -259,13 +270,58 @@
     
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        //NSLog(@"%f",[recognizer velocityInView:self.view].x);
         if ([recognizer velocityInView:self.view].x > 0) {
             [self showMenu];
         } else {
             [self hideMenu];
         }
     }
+}
+#pragma Slide Icon
+
+-(void)addNavSlideIcon
+{
+    if (!_slideIconEnabled) {
+        return;
+    }
+    
+    if (!_currentViewController) {
+        return;
+    }
+    
+    //只针对currentvc为navigationcontroller
+    if (![_currentViewController isKindOfClass:[UINavigationController class]]) {
+        return;
+    }
+    UINavigationController *nav = (UINavigationController *)_currentViewController;
+    //UIBarButtonItem *slideButton = [UIBarButtonItem
+    UIButton *slideButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [slideButton setFrame:CGRectMake(0, 0, 30, 30)];
+    [slideButton setImage:[UIImage imageNamed:@"slideIcon"] forState:UIControlStateNormal];
+    [slideButton setImage:[UIImage imageNamed:@"slideIcon_s"] forState:UIControlStateSelected];
+    [slideButton setImage:[UIImage imageNamed:@"slideIcon_s"] forState:UIControlStateHighlighted];
+    [slideButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuIcon = [[UIBarButtonItem alloc]initWithCustomView:slideButton];
+    
+    //_currentViewController.navigationItem.leftBarButtonItem = menuIcon;
+    //NSLog(@"%@",_currentViewController);
+    //[_currentViewController.navigationController.navigationItem setLeftBarButtonItem:menuIcon];
+    UIViewController *rootViewController = [[nav viewControllers] objectAtIndex:0];
+    rootViewController.navigationItem.leftBarButtonItem = menuIcon;
+    
+    [menuIcon release];
+    
+    
+    
+    
+    
+    
+}
+
+-(void)dealloc
+{
+    [super dealloc];
+    [_currentViewController release];
 }
 
 @end

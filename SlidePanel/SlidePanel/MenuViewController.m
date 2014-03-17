@@ -86,10 +86,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     switch (indexPath.row) {
-        case 0:
-            self.slideMenu.currentViewController = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
+        case 0: {
+           // self.slideMenu.currentViewController = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
+            MainViewController *main = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
+            UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:main];
+            self.slideMenu.currentViewController = nav;
             [self.slideMenu hideMenu];
             break;
+        }
         case 1:
             self.slideMenu.currentViewController = [[SettingViewController alloc]init];
             [self.slideMenu hideMenu];

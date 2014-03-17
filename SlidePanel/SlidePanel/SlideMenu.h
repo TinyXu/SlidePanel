@@ -20,11 +20,13 @@
 @property(nonatomic,strong) UIButton *currentTopButton;
 //滑动时背影图片缩放开关
 @property(nonatomic,assign,readwrite) BOOL backgroundImageScaleisOn;
-@property(nonatomic,strong,readwrite) UIViewController *currentViewController;
+@property(nonatomic,retain,readwrite) UIViewController *currentViewController;
 @property(nonatomic,strong,readwrite) UIViewController *menuViewController;
 @property(nonatomic,strong,readwrite) UIImage *backgroundImage;
 //动画时间
 @property(nonatomic,assign,readwrite) float animateDuration;
+//侧滑icon开关
+@property(nonatomic,assign,readwrite) BOOL slideIconEnabled;
 
 //手势开关
 @property(nonatomic,assign,readwrite) BOOL panEnabled;

@@ -18,8 +18,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     MainViewController *main = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:main];
     MenuViewController *menu = [[MenuViewController alloc]initWithNibName:@"MenuViewController" bundle:nil];
-    SlideMenu *rootMenu = [[SlideMenu alloc]initWithCurrentViewController:main menu:menu];
+    SlideMenu *rootMenu = [[SlideMenu alloc]initWithCurrentViewController:nav menu:menu];
+    rootMenu.animateDuration = 0.8f;
     rootMenu.panEnabled = YES;
     [self.window setRootViewController:rootMenu];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -26,7 +26,7 @@
 		95A87DD118D0849900DBA559 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A87DCF18D0849900DBA559 /* MainViewController.m */; };
 		95A87DD218D0849900DBA559 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A87DD018D0849900DBA559 /* MainViewController.xib */; };
 		95A87DD518D0855600DBA559 /* UIViewController+SlidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A87DD418D0855600DBA559 /* UIViewController+SlidePanel.m */; };
-		95A990DA18C8A19700B38BEB /* SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A990D918C8A19700B38BEB /* SlideMenu.m */; };
+		95A990DA18C8A19700B38BEB /* SlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A990D918C8A19700B38BEB /* SlideMenu.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
