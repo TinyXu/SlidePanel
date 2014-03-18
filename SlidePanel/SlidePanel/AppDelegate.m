@@ -23,6 +23,7 @@
     SlideMenu *rootMenu = [[SlideMenu alloc]initWithCurrentViewController:nav menu:menu];
     rootMenu.animateDuration = 0.8f;
     rootMenu.panEnabled = YES;
+    //rootMenu.currentScaleValue = 0.7;
     [self.window setRootViewController:rootMenu];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

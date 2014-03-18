@@ -35,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-100) style:UITableViewStylePlain];
-    _tableview.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+    _tableview.autoresizingMask =   UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _tableview.delegate = self;
     _tableview.dataSource = self;
     _tableview.opaque = NO;
